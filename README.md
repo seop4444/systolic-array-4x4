@@ -12,6 +12,48 @@ This project is for practicing RTL design and understanding how data moves betwe
 - Input A moves horizontally, and input B moves vertically
 - Reset, enable, and accumulator clear signals
 
+
+## Architecture
+
+```mermaid
+flowchart TB
+    P00["PE 00"] --> P01["PE 01"]
+    P01 --> P02["PE 02"]
+    P02 --> P03["PE 03"]
+
+    P10["PE 10"] --> P11["PE 11"]
+    P11 --> P12["PE 12"]
+    P12 --> P13["PE 13"]
+
+    P20["PE 20"] --> P21["PE 21"]
+    P21 --> P22["PE 22"]
+    P22 --> P23["PE 23"]
+
+    P30["PE 30"] --> P31["PE 31"]
+    P31 --> P32["PE 32"]
+    P32 --> P33["PE 33"]
+
+    P00 --> P10
+    P10 --> P20
+    P20 --> P30
+
+    P01 --> P11
+    P11 --> P21
+    P21 --> P31
+
+    P02 --> P12
+    P12 --> P22
+    P22 --> P32
+
+    P03 --> P13
+    P13 --> P23
+    P23 --> P33
+```
+
+- Horizontal: A data flow
+- Vertical: B data flow
+
+
 ## Files
 
 | File | Description |
