@@ -63,6 +63,21 @@ module tb_systolic_array_4x4();
         .b_in1(b_in1),
         .b_in2(b_in2),
         .b_in3(b_in3),
+        .acc_00(acc_00),
+        .acc_01(acc_01),
+        .acc_02(acc_02),
+        .acc_03(acc_03),
+        .acc_10(acc_10),
+        .acc_11(acc_11),
+        .acc_12(acc_12),
+        .acc_13(acc_13),
+        .acc_20(acc_20),
+        .acc_21(acc_21),
+        .acc_22(acc_22),
+        .acc_23(acc_23),
+        .acc_30(acc_30),
+        .acc_31(acc_31),
+        .acc_32(acc_32),
         .acc_33(acc_33)
     );
 
@@ -91,7 +106,7 @@ module tb_systolic_array_4x4();
         #60;
 
         if(acc_33==-6) begin
-            $display("[PASS] Verification Success. acc_33=%d", acc_33);
+            $display("[PASS] PE33 test passed. acc_33=%d", acc_33);
         end else begin
             $display("[FAIL] acc_33=%d", acc_33);
         end
