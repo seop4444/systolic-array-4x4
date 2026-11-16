@@ -64,9 +64,9 @@ module tb_pe_os();
         #20 enable=0;
 
         if(acc_out==-2) begin
-            $display("[PASS] Verification Success. acc_out = %d", acc_out);
+            $display("[PASS] PE MAC Accumulation: acc_out = %d", acc_out);
         end else begin
-            $display("[FAIL] Calculation Error. acc_out = %d", acc_out);
+            $display("[FAIL] PE MAC Accumulation: expected = -2, actual = %d", acc_out);
         end
         
         #20
@@ -74,9 +74,9 @@ module tb_pe_os();
         clear_acc=1;
         #20
         if(acc_out==0) begin
-            $display("[PASS]");
+            $display("[PASS] PE Accumulation clear: acc_out = %d", acc_out);
         end else begin
-            $display("[FAIL]");
+            $display("[FAIL] PE Accumulation clear: expected = 0, actual = %d", acc_out);
         end
 
         clear_acc=0;
@@ -85,9 +85,9 @@ module tb_pe_os();
         #20
         enable=0;
         if(acc_out==15) begin
-            $display("[PASS]");
+            $display("[PASS] PE MAC after clear: acc_out = %d", acc_out);
         end else begin
-            $display("[FAIL]");
+            $display("[FAIL] PE MAC after clear: exepcted = 15, actual = %d", acc_out);
         end 
         $finish;
     end
